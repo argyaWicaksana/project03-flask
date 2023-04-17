@@ -41,7 +41,7 @@
         let markers = []
         $(document).ready(() => {
 
-            mapboxgl.accessToken = "pk.eyJ1IjoibGluY3hsbiIsImEiOiJjbDluMHppMjIwMTR5NDBtejl3NjNueGdyIn0.DLAhnub2hn2okIq0gwCJEw";
+            mapboxgl.accessToken = "{{ token }}";
             map = new mapboxgl.Map({
                 container: "map", // container ID
                 center: [-122.420679, 37.772537], // starting position [lng, lat]

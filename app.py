@@ -11,6 +11,7 @@ load_dotenv(dotenv_path)
 
 MONGODB_URI = os.environ.get("MONGODB_URI")
 DB_NAME =  os.environ.get("DB_NAME")
+ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
 
 client = MongoClient(MONGODB_URI)
 db = client[DB_NAME]
@@ -22,7 +23,7 @@ def main():
 
 @app.route('/map')
 def map():
-    return render_template("prac_map.html")
+    return render_template("prac_map.html", token=ACCESS_TOKEN)
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
